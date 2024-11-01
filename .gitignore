@@ -64,3 +64,4 @@ examples/example_sdl2_sdlrenderer/example_sdl2_sdlrenderer
 *.vcxproj
 bin/
 bin-int/
+*.filters

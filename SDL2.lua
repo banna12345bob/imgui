@@ -1,4 +1,4 @@
-project "ImGui"
+project "ImGui SDL2"
 	kind "StaticLib"
 	language "C++"
 
@@ -7,17 +7,22 @@ project "ImGui"
 
 	files
 	{
-		"imconfig.h",
-		"imgui.h",
-		"imgui.cpp",
-		"imgui_draw.cpp",
-		"imgui_internal.h",
-		"imgui_tables.cpp",
-		"imgui_widgets.cpp",
-		"imstb_rectpack.h",
-		"imstb_textedit.h",
-		"imstb_truetype.h",
-		"imgui_demo.cpp"
+		"backends/imgui_impl_sdl2.cpp",
+		"backends/imgui_impl_sdl2.h",
+		"backends/imgui_impl_sdlrenderer2.cpp",
+		"backends/imgui_impl_sdlrenderer2.h"
+	}
+
+	includedirs
+	{
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.sdl2}"
+	}
+
+	links {
+		"ImGui",
+		"SDL2",
+		"SDL2main"
 	}
 
 	filter "system:windows"
