@@ -17,13 +17,29 @@ project "ImGui"
 		"imstb_rectpack.h",
 		"imstb_textedit.h",
 		"imstb_truetype.h",
-		"imgui_demo.cpp"
+		"imgui_demo.cpp",
+		"backends/imgui_impl_sdl2.cpp",
+		"backends/imgui_impl_sdl2.h",
+		"backends/imgui_impl_sdlrenderer2.cpp",
+		"backends/imgui_impl_sdlrenderer2.h"
+	}
+
+	includedirs
+	{
+		"%{IncludeDir.sdl2}"
+	}
+
+	links {
+		"SDL2",
 	}
 
 	filter "system:windows"
 		systemversion "latest"
 		cppdialect "C++17"
 		staticruntime "On"
+		links {
+			"SDL2main"
+		}
 
 	filter "system:linux"
 		pic "On"
