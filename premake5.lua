@@ -26,7 +26,13 @@ project "ImGui"
 
 	includedirs
 	{
-		"%{IncludeDir.sdl2}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.SDL2}"
+	}
+
+	libdirs
+	{
+		"%{IncludeDir.SDL2}/../lib/x86/"
 	}
 
 	links {
