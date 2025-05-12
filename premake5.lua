@@ -20,8 +20,8 @@ project "ImGui"
 		"imgui_demo.cpp",
 		"backends/imgui_impl_sdl3.cpp",
 		"backends/imgui_impl_sdl3.h",
-		"backends/imgui_impl_sdlrenderer3.cpp",
-		"backends/imgui_impl_sdlrenderer3.h"
+		"backends/imgui_impl_opengl3.cpp",
+		"backends/imgui_impl_opengl3.h"
 	}
 
 	includedirs
