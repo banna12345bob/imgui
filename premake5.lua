@@ -39,6 +39,10 @@ project "ImGui"
 		"SDL3",
 	}
 
+	flags {
+		"MultiProcessorCompile"
+	}
+
 	filter "system:windows"
 		systemversion "latest"
 		cppdialect "C++17"
