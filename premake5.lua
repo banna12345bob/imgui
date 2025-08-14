@@ -20,6 +20,8 @@ project "ImGui"
 		"imgui_demo.cpp",
 		"backends/imgui_impl_sdl3.cpp",
 		"backends/imgui_impl_sdl3.h",
+		"backends/imgui_impl_glfw.cpp",
+		"backends/imgui_impl_glfw.h",
 		"backends/imgui_impl_opengl3.cpp",
 		"backends/imgui_impl_opengl3.h"
 	}
@@ -27,16 +29,19 @@ project "ImGui"
 	includedirs
 	{
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.SDL3}"
+		"%{IncludeDir.SDL3}",
+		"%{IncludeDir.GLFW}"
 	}
 
 	libdirs
 	{
-		"%{IncludeDir.SDL3}/../lib/x64/"
+		"%{IncludeDir.SDL3}/../lib/x64/",
+		"%{IncludeDir.GLFW}/../bin/"..outputdir.."/GLFW/"
 	}
 
 	links {
 		"SDL3",
+		"GLFW",
 	}
 
 	flags {
